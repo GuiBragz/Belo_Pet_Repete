@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Painel Esquerdo */
+.left-panel {
+  flex: 1;
+  background: url('/img/cuidados-filhote-de-cachorro.jpg.webp') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.left-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.left-content .logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.left-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.left-content h2 span {
+  background-color: #567ebb;
+}
+
+.left-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.left-content ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+}
+
+.left-content li {
+  margin-bottom: 8px;
+}
+
+/* Painel Direito */
+.right-panel {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.login-form h2 {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-form a {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form .signup {
+  margin-top: 10px;
+  font-size: 14px;
+}

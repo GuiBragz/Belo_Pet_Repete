@@ -1,97 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Belo Pet Repet</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro Pet</title>
+  <link rel="stylesheet" href="/style/login.css" />
 </head>
-
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-    <div class="container d-flex align-items-center">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="img/cachorro.png" alt="Belo Pet Repet" width="60" class="me-2">
-        <strong>Belo Pet Repet</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Quem Somos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Como Cadastrar</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Alterar Titularidade</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Comprar Microchip</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Animais Perdidos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+  <div class="container">
+    <div class="left-panel">
+      <div class="left-content">
+        <img src="/img/images.jpg" alt="Logo Cadastro Pet" class="logo">
+        <h2>Crie uma conta na <span>Cadastro Pet</span></h2>
+        <p>Seja bem-vindo ao Cadastro Pet!<br>
+          Seu pet é especial, temos a certeza disso!</p>
+        <ul>
+          <li>🔔 Alertas para vacinas próximas.</li>
+          <li>📅 Agenda eletrônica.</li>
+          <li>🔍 Buscas pelo seu pet.</li>
         </ul>
       </div>
     </div>
-  </nav>
 
-  <!-- Seção: Adote seu cachorro -->
-  <section class="banner">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between py-5">
-      <div class="col-md-6">
-        <h1 class="mb-4 animacao-texto">Adote Seu cachorro<br>Na Belo Pet Repet</h1>
-        <a href="#" class="btn btn-azul px-4 py-2 rounded-pill animacao-texto">Confira</a>
-      </div>
-      <div class="col-md-5 text-center">
-        <img src="https://love.doghero.com.br/wp-content/uploads/2019/09/Golden.jpg.jpg" alt="Cachorro feliz" class="img-fluid rounded animacao-texto">
-      </div>
+    <div class="right-panel">
+      <form class="login-form">
+        <h2>🐾 Entrar 🐾</h2>
+        <p>Informe os dados abaixo</p>
+        <input type="email" placeholder="Digite seu e-mail" required>
+        <input type="password" placeholder="Digite sua senha" required>
+        <a href="#">Esqueci minha senha</a>
+        <button type="submit">Entrar</button>
+        <p class="signup">Não possui uma conta? <a href="#">Criar conta</a></p>
+      </form>
     </div>
-  </section>
-
-  <!-- Seção de boas-vindas -->
-  <section class="welcome-section py-5">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between">
-      <div class="col-md-6">
-        <h2 class="mb-4 welcome-text">
-          <img src="img/patinhas.png" alt="Patinhas" width="20"> Sejam bem-vindos ao Belo Pet Repet! <img src="img/patinhas.png" alt="Patinhas" width="20">
-        </h2>
-        <p>Aqui, seu novo amigo de quatro patas está esperando por você! Sabemos que cada animal perdido é um lar vazio, e é por isso que criamos este espaço dedicado à adoção responsável e ao reencontro de animais perdidos.</p>
-        <p>Nosso banco de dados está repleto de informações sobre animais que foram encontrados e estão à espera de um novo lar.</p>
-
-        <h4 class="mt-4">Adoção Responsável</h4>
-        <p>Com o nosso processo de adoção, garantimos que cada pet tenha a chance de encontrar uma família amorosa e responsável.</p>
-
-        <h4 class="mt-4">Junte-se a nós</h4>
-        <p>A adoção de um animal não é apenas dar um lar, é também proporcionar amor, cuidado e uma nova chance para esses animais.</p>
-      </div>
-      <div class="col-md-5 text-center">
-        <img src="img/cachorro fd.png" alt="Cachorro" class="img-fluid rounded">
-      </div>
-    </div>
-  </section>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const animateOnScroll = (selector) => {
-        const elements = document.querySelectorAll(selector);
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.4 });
-
-        elements.forEach(el => observer.observe(el));
-      };
-
-      animateOnScroll('.animacao-texto');
-      animateOnScroll('.welcome-section');
-    });
-  </script>
+  </div>
 </body>
-
 </html>
