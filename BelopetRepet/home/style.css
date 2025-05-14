@@ -1,0 +1,81 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #567ebb !important;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.navbar-brand strong {
+  font-weight: bold;
+}
+
+/* Banner */
+.banner {
+  background-color: #f0ddbd;
+  padding: 60px 0;
+}
+
+.banner h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-azul {
+  background-color: #567ebb;
+  color: #fff;
+  border: none;
+}
+
+.btn-azul:hover {
+  background-color: #466ba1;
+  color: #fff;
+}
+
+/* Animações */
+.animacao-texto,
+.welcome-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animacao-texto.visible,
+.welcome-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Seção de boas-vindas */
+.welcome-text {
+  color: #567ebb;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+h4 {
+  color: #567ebb;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+}
