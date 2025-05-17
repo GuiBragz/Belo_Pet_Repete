@@ -7,7 +7,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #567ebb !important;
+  background-color: #75a2e7 !important;
 }
 
 .navbar-brand,
@@ -33,7 +33,7 @@ body {
 }
 
 .btn-azul {
-  background-color: #567ebb;
+  background-color: #75a2e7;
   color: #fff;
   border: none;
 }
@@ -59,15 +59,22 @@ body {
 
 /* Seção de boas-vindas */
 .welcome-text {
-  color: #567ebb;
+  color: #75a2e7;
   font-weight: bold;
   font-size: 1.8rem;
 }
 
 h4 {
-  color: #567ebb;
+  color: #75a2e7;
   font-weight: 600;
 }
+
+.flutter {
+  height: 100%;
+  background-color: #75a2e7;
+
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {

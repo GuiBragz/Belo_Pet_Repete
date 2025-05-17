@@ -1,20 +1,23 @@
+/* Reset e fonte */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body, html {
   height: 100%;
+  background-color: #f8f9fa; /* mesma cor da home */
 }
 
+/* Container principal: dois painéis lado a lado */
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* Painel Esquerdo */
+/* Painel esquerdo com imagem */
 .left-panel {
   flex: 1;
   background: url('/img/cuidados-filhote-de-cachorro.jpg.webp') no-repeat center center;
@@ -22,6 +25,7 @@ body, html {
   position: relative;
 }
 
+/* Conteúdo sobre a imagem */
 .left-content {
   position: absolute;
   top: 50%;
@@ -46,7 +50,9 @@ body, html {
 }
 
 .left-content h2 span {
-  background-color: #567ebb;
+  background-color: #75a2e7; /* cor azul da home */
+  padding: 0 6px;
+  border-radius: 4px;
 }
 
 .left-content p {
@@ -64,15 +70,17 @@ body, html {
   margin-bottom: 8px;
 }
 
-/* Painel Direito */
+/* Painel direito: formulário */
 .right-panel {
   flex: 1;
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
 }
 
+/* Formulário de login */
 .login-form {
   width: 80%;
   max-width: 350px;
@@ -80,8 +88,9 @@ body, html {
 }
 
 .login-form h2 {
-  color: #555;
-  margin-bottom: 10px;
+  color: #75a2e7; /* azul da home */
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .login-form input {
@@ -90,28 +99,46 @@ body, html {
   margin: 10px 0;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #75a2e7;
+  outline: none;
 }
 
 .login-form a {
   display: block;
   margin-bottom: 15px;
   font-size: 14px;
-  color: #007bff;
+  color: #75a2e7;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-form a:hover {
+  color: #466ba1; /* azul escuro */
 }
 
 .login-form button {
   width: 100%;
   padding: 12px;
-  background-color: #004aad;
+  background-color: #75a2e7;
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #466ba1;
 }
 
 .login-form .signup {
   margin-top: 10px;
   font-size: 14px;
+  color: #555;
 }

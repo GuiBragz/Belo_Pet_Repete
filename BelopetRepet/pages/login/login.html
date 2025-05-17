@@ -4,11 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cadastro Pet</title>
-  <link rel="stylesheet" href="/BelopetRepet/login/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/BelopetRepet/pages/login/login.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="left-panel">
+  <main class="container">
+    <section class="left-panel">
       <div class="left-content">
         <img src="/BelopetRepet/img/logo.png.png" alt="Logo Cadastro Pet" class="logo">
         <h2>Crie uma conta na <span>Cadastro Pet</span></h2>
@@ -20,19 +23,19 @@
           <li>🔍 Buscas pelo seu pet.</li>
         </ul>
       </div>
-    </div>
+    </section>
 
-    <div class="right-panel">
-      <form class="login-form">
+    <section class="right-panel">
+      <form class="login-form" autocomplete="on">
         <h2>🐾 Entrar 🐾</h2>
         <p>Informe os dados abaixo</p>
-        <input type="email" placeholder="Digite seu e-mail" required>
-        <input type="password" placeholder="Digite sua senha" required>
+        <input type="email" placeholder="Digite seu e-mail" name="email" required>
+        <input type="password" placeholder="Digite sua senha" name="password" required>
         <a href="#">Esqueci minha senha</a>
         <button type="submit">Entrar</button>
-        <p class="signup">Não possui uma conta? <a href="#">Criar conta</a></p>
+        <p class="signup">Não possui uma conta? <a href="/BelopetRepet/pages/cadastro/cadastro.html">Criar conta</a></p>
       </form>
-    </div>
-  </div>
+    </section>
+  </main>
 </body>
 </html>
