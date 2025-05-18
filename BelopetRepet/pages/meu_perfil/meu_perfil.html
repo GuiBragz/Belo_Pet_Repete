@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu Perfil – Belo Pet Repet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; }
+    .profile-header {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .profile-avatar {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #75a2e7;
+    }
+    .profile-info dt { font-weight: 600; }
+    .btn-edit { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/BelopetRepet/home/index.html">
+        <img src="/BelopetRepet/img/cachorro.png" width="40" alt="Logo">
+        <span class="ms-2 fw-bold">Belo Pet Repet</span>
+      </a>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#">Meu Perfil</a></li>
+          <li class="nav-item"><a class="nav-link" href="/BelopetRepet/pages/meus_pets/meus_pets.html">Meus Pets</a></li>
+          <li class="nav-item"><a class="nav-link" href="/BelopetRepet/pages/contato/contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link text-danger" href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Espaço navbar -->
+  <div style="height: 70px;"></div>
+
+  <!-- Cabeçalho -->
+  <header class="container profile-header">
+    <img src="https://ui-avatars.com/api/?name=Usuário" alt="Avatar" class="profile-avatar mb-3">
+    <h2 id="displayName">Nome do Usuário</h2>
+    <p class="text-muted" id="displayEmail">email@exemplo.com</p>
+    <button class="btn btn-outline-primary btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditProfile">
+      <i class="bi bi-pencil"></i> Editar Perfil
+    </button>
+  </header>
+
+  <!-- Detalhes do perfil -->
+  <main class="container mb-5">
+    <dl class="row">
+      <dt class="col-sm-3">Nome Completo</dt>
+      <dd class="col-sm-9" id="detailName">Nome do Usuário</dd>
+
+      <dt class="col-sm-3">E-mail</dt>
+      <dd class="col-sm-9" id="detailEmail">email@exemplo.com</dd>
+
+      <dt class="col-sm-3">Telefone</dt>
+      <dd class="col-sm-9" id="detailPhone">(00) 91234-5678</dd>
+
+      <dt class="col-sm-3">Endereço</dt>
+      <dd class="col-sm-9" id="detailAddress">Rua Exemplo, 123, Bairro, Cidade</dd>
+    </dl>
+  </main>
+
+  <!-- Modal Editar Perfil -->
+  <div class="modal fade" id="modalEditProfile" tabindex="-1"
+       aria-labelledby="modalEditProfileLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" id="formEditProfile" onsubmit="saveProfile(event)">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditProfileLabel">Editar Perfil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="editName" class="form-label">Nome Completo</label>
+            <input type="text" id="editName" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="editEmail" class="form-label">E-mail</label>
+            <input type="email" id="editEmail" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="editPhone" class="form-label">Telefone</label>
+            <input type="tel" id="editPhone" class="form-control" placeholder="(00) 91234-5678">
+          </div>
+          <div class="mb-3">
+            <label for="editAddress" class="form-label">Endereço</label>
+            <input type="text" id="editAddress" class="form-control" placeholder="Rua, número, bairro">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+                  data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="bg-white text-center py-3 mt-auto shadow-sm">
+    <div class="container">
+      <small>Todos os Direitos Reservados © 2025 • Belo Pet Repet</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Simulação de dados do usuário (substituir por chamada ao backend)
+    let user = {
+      name: 'João Silva',
+      email: 'joao.silva@mail.com',
+      phone: '(81) 91234-5678',
+      address: 'Av. Paulista, 1000, São Paulo, SP'
+    };
+
+    // Exibe dados iniciais
+    function renderProfile() {
+      document.getElementById('displayName').textContent = user.name;
+      document.getElementById('displayEmail').textContent = user.email;
+      document.getElementById('detailName').textContent = user.name;
+      document.getElementById('detailEmail').textContent = user.email;
+      document.getElementById('detailPhone').textContent = user.phone;
+      document.getElementById('detailAddress').textContent = user.address;
+      document.querySelector('.profile-avatar').src =
+        `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=75a2e7&color=fff`;
+    }
+
+    // Preenche modal com dados atuais
+    function openEditModal() {
+      document.getElementById('editName').value = user.name;
+      document.getElementById('editEmail').value = user.email;
+      document.getElementById('editPhone').value = user.phone;
+      document.getElementById('editAddress').value = user.address;
+    }
+
+    // Salva alterações (simulação)
+    function saveProfile(e) {
+      e.preventDefault();
+      user.name = document.getElementById('editName').value;
+      user.email = document.getElementById('editEmail').value;
+      user.phone = document.getElementById('editPhone').value;
+      user.address = document.getElementById('editAddress').value;
+      renderProfile();
+      bootstrap.Modal.getInstance(document.getElementById('modalEditProfile')).hide();
+    }
+
+    // Inicializa
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProfile();
+      document.getElementById('modalEditProfile')
+              .addEventListener('show.bs.modal', openEditModal);
+    });
+  </script>
+</body>
+</html>

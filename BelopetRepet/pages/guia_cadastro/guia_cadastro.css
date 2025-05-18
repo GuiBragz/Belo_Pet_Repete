@@ -1,16 +1,35 @@
-.sobre-nos {
+.guia-cadastro {
   background-color: #f8f9fa;
-}
-
-.sobre-nos h2 {
-  font-size: 2.5rem;
   color: #444;
 }
 
-.sobre-nos p {
+.guia-cadastro h2 {
+  font-size: 2.5rem;
+}
+
+.guia-cadastro p,
+.guia-cadastro ol li {
   font-size: 1.1rem;
-  color: #555;
   line-height: 1.6;
+}
+
+.guia-cadastro ol li {
+  margin-bottom: 10px;
+}
+
+.alert-primary {
+  font-size: 1rem;
+}
+
+.btn-azul {
+  background-color: #75a2e7;
+  color: white;
+  border: none;
+}
+
+.btn-azul:hover {
+  background-color: #5a7ccc;
+  color: white;
 }
 
 .animacao-texto {

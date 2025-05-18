@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de Adoção - Belo Pet Repet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/BelopetRepet/pages/lista/lista.css" />
+  <style>
+    /* Ajuste opcional para a busca ficar com ícone dentro do input, combinando com os filtros */
+    .input-group-text {
+      background-color: #75a2e7;
+      border: none;
+      color: white;
+    }
+    .form-control:focus {
+      box-shadow: 0 0 5px #75a2e7;
+      border-color: #75a2e7;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top" style="background-color: #75a2e7;">
+    <div class="container d-flex align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="/BelopetRepet/img/cachorro.png" alt="Belo Pet Repet" width="60" />
+        <strong class="text-white ms-2">Belo Pet Repet</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="/BelopetRepet/pages/sobre-nos/sobre_nos.html">Quem Somos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/BelopetRepet/pages/guia_cadastro/guia_cadastro.html">Como Cadastrar</a></li>
+          <li class="nav-item"><a class="nav-link text-white active" href="#">Lista de Adoção</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/BelopetRepet/pages/contato/contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/BelopetRepet/pages/login/login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Espaço para navbar fixa -->
+  <div style="height: 70px;"></div>
+
+  <!-- Filtros -->
+  <section class="container filter-section">
+    <h3 class="mb-4">Filtrar Animais para Adoção</h3>
+    <form class="row g-3" id="filterForm">
+      <!-- Campo Buscar Nome -->
+      <div class="col-md-4">
+        <label for="searchInput" class="form-label">Buscar nome do pet</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input type="text" class="form-control" id="searchInput" placeholder="Nome do pet..." />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <label for="filterEspecie" class="form-label">Espécie</label>
+        <select id="filterEspecie" class="form-select" name="especie">
+          <option value="">Todos</option>
+          <option value="cachorro">Cachorro</option>
+          <option value="gato">Gato</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+
+      <div class="col-md-2">
+        <label for="filterPorte" class="form-label">Porte</label>
+        <select id="filterPorte" class="form-select" name="porte">
+          <option value="">Todos</option>
+          <option value="pequeno">Pequeno</option>
+          <option value="medio">Médio</option>
+          <option value="grande">Grande</option>
+        </select>
+      </div>
+
+      <div class="col-md-2">
+        <label for="filterIdade" class="form-label">Idade</label>
+        <select id="filterIdade" class="form-select" name="idade">
+          <option value="">Todas</option>
+          <option value="filhote">Filhote</option>
+          <option value="adulto">Adulto</option>
+          <option value="idoso">Idoso</option>
+        </select>
+      </div>
+
+      <div class="col-md-2">
+        <label for="filterLocalizacao" class="form-label">Localização</label>
+        <input type="text" id="filterLocalizacao" name="localizacao" class="form-control" placeholder="Cidade, bairro..." />
+      </div>
+
+      <div class="col-12 d-flex justify-content-end">
+        <button type="reset" class="btn btn-outline-secondary me-2">Limpar</button>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Lista de Pets -->
+  <section class="container mb-5">
+    <div class="row g-4" id="petList">
+
+      <!-- Exemplo de Card -->
+      <div class="col-md-4 pet-card-item" data-nome="toby" data-especie="cachorro" data-porte="medio" data-idade="adulto" data-localizacao="recife">
+        <div class="card pet-card shadow-sm">
+          <img src="https://placedog.net/400/250?id=1" class="card-img-top" alt="Toby" />
+          <div class="card-body">
+            <h5 class="card-title">Toby</h5>
+            <p class="card-text mb-1"><strong>Espécie:</strong> Cachorro</p>
+            <p class="card-text mb-1"><strong>Idade:</strong> 2 anos (Adulto)</p>
+            <p class="card-text mb-1"><strong>Porte:</strong> Médio</p>
+            <p>
+              <span class="badge bg-success status-badge">Disponível</span>
+            </p>
+            <a href="mailto:responsavel@ong.com" class="btn btn-primary w-100">Entrar em Contato</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 pet-card-item" data-nome="mimi" data-especie="gato" data-porte="pequeno" data-idade="filhote" data-localizacao="olinda">
+        <div class="card pet-card shadow-sm">
+          <img src="https://placekitten.com/400/250" class="card-img-top" alt="Mimi" />
+          <div class="card-body">
+            <h5 class="card-title">Mimi</h5>
+            <p class="card-text mb-1"><strong>Espécie:</strong> Gato</p>
+            <p class="card-text mb-1"><strong>Idade:</strong> 6 meses (Filhote)</p>
+            <p class="card-text mb-1"><strong>Porte:</strong> Pequeno</p>
+            <p>
+              <span class="badge bg-warning text-dark status-badge">Em processo</span>
+            </p>
+            <a href="mailto:responsavel@ong.com" class="btn btn-primary w-100">Entrar em Contato</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mais cards aqui, seguindo o mesmo padrão -->
+
+    </div>
+  </section>
+
+  <!-- Rodapé simples -->
+  <footer class="bg-light text-center py-3">
+    <div class="container d-flex align-items-center justify-content-center gap-3">
+      <img src="/BelopetRepet/img/cachorro.png" alt="flutter-img" width="40" height="auto" />
+      <p class="mb-0">Todos os Direitos Reservados © 2025</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filtrar pets pela busca e filtros
+    const filterForm = document.getElementById('filterForm');
+    const petList = document.getElementById('petList');
+    const petCards = petList.querySelectorAll('.pet-card-item');
+    const searchInput = document.getElementById('searchInput');
+
+    function filterPets() {
+      const busca = searchInput.value.toLowerCase();
+      const especie = filterForm.especie.value;
+      const porte = filterForm.porte.value;
+      const idade = filterForm.idade.value;
+      const localizacao = filterForm.localizacao.value.toLowerCase();
+
+      petCards.forEach(card => {
+        const nome = card.dataset.nome.toLowerCase();
+        const cardEspecie = card.dataset.especie;
+        const cardPorte = card.dataset.porte;
+        const cardIdade = card.dataset.idade;
+        const cardLocalizacao = card.dataset.localizacao.toLowerCase();
+
+        const matchesBusca = nome.includes(busca);
+        const matchesEspecie = especie ? especie === cardEspecie : true;
+        const matchesPorte = porte ? porte === cardPorte : true;
+        const matchesIdade = idade ? idade === cardIdade : true;
+        const matchesLocalizacao = localizacao ? cardLocalizacao.includes(localizacao) : true;
+
+        if (matchesBusca && matchesEspecie && matchesPorte && matchesIdade && matchesLocalizacao) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Executa o filtro no envio do formulário de filtros
+    filterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      filterPets();
+    });
+
+    // Limpa os filtros e exibe todos os pets
+    filterForm.addEventListener('reset', () => {
+      setTimeout(() => {
+        searchInput.value = '';
+        filterPets();
+      }, 0);
+    });
+
+    // Filtro em tempo real na busca
+    searchInput.addEventListener('input', () => {
+      filterPets();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,38 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="/BelopetRepet/pages/sobre-nos/sobre_nos.css"> <!-- Aqui faz o link com o CSS -->    <title>Belo_Pet_Repete</title>
-<link rel="shortcut icon" href="/BelopetRepet/img/logo.png.png" type="png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre Nós - Belo Pet Repet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="/BelopetRepet/pages/sobre-nos/sobre_nos.css">
 </head>
+
 <body>
-    <section id="sobre-nos" class="sobre-nos">
-        <div class="navbar">
-            <img src="/BelopetRepet/img/cachorro.png" width="120vw" height="150vw"> 
-            <h3><a href="/BelopetRepet/home/index.html" id="home">Home</a></h3>
-            <h3><a href="/BelopetRepet/login/login.html" id="login">Login</a></h3>
-            <h3><a id="lista">Lista</a></h3>
-        
-        </div>
-        
-  <div class="container">
-    <h2>Sobre Nós</h2>
-    <p>
-      A <strong>Belo Pet Repete</strong> 
-    A Belo Pet Repete é uma iniciativa feita de coração para coração. Surgimos com um propósito simples, mas poderoso: dar uma nova chance aos animais que mais precisam. Nosso trabalho é conectar bichinhos resgatados com pessoas dispostas a oferecer amor, cuidado e um lar de verdade.
 
-Sabemos que cada pet tem uma história. Alguns foram abandonados, outros sofreram maus-tratos, mas todos têm em comum a vontade de recomeçar — e é aí que você entra.
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container d-flex align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="/BelopetRepet/home/index.html">
+        <img src="/BelopetRepet/img/cachorro.png" alt="Belo Pet Repet" width="100" class="me-2">
+        <strong>Belo Pet Repet</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Quem Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/BelopetRepet/pages/guia_cadastro/guia_cadastro.html">Como Cadastrar</a></li>
+          <li class="nav-item"><a class="nav-link" href="/BelopetRepet/pages/lista/lista.html">Lista de Adoção</a></li>
+          <li class="nav-item"><a class="nav-link" href="/BelopetRepet/pages/contato/contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="/BelopetRepet/pages/login/login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-Aqui, cada adoção é feita com responsabilidade, carinho e acompanhamento. Queremos que cada animal encontre não só uma casa, mas uma família. Porque adotar transforma duas vidas: a deles e a sua.
+  <!-- Seção Sobre Nós -->
+  <section class="sobre-nos py-5">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <div class="col-md-6">
+        <h2 class="mb-4 animacao-texto">Quem Somos</h2>
+        <p>A <strong>Belo Pet Repet</strong> nasceu de um propósito simples, mas cheio de amor: oferecer uma nova chance para animais resgatados que precisam de um lar acolhedor.</p>
+        <p>Nosso trabalho é conectar esses bichinhos com pessoas dispostas a compartilhar carinho, cuidado e uma nova história.</p>
+        <p>Acreditamos que cada adoção muda duas vidas: a do pet e a do adotante. Por isso, todo o processo é feito com responsabilidade, acompanhamento e muito afeto.</p>
+        <p>Também contamos com uma equipe apaixonada por pets, pronta para oferecer serviços de banho, tosa e atendimento com dedicação e zelo.</p>
+        <p class="fw-bold">Belo Pet Repet: onde o amor recomeça. 🐾</p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="https://love.doghero.com.br/wp-content/uploads/2019/09/Golden.jpg.jpg" alt="Cachorro feliz" class="img-fluid rounded animacao-texto">
+      </div>
+    </div>
+  </section>
 
-Belo Pet Repete: onde o amor recomeça.
-    </p>
-    <p>
-      Contamos com uma equipe apaixonada por pets, pronta para atender com dedicação em cada banho, tosa ou consulta. Aqui, seu animalzinho está em boas patas!
-    </p>
+  <!-- Rodapé -->
+  <div class="flutter d-flex align-items-center justify-content-center gap-3 py-4">
+    <img src="/BelopetRepet/img/cachorro.png" alt="logo-footer" width="50" height="auto">
+    <p class="mb-0">Todos os Direitos Reservados © 2025</p>
   </div>
-</section>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const animateOnScroll = (selector) => {
+        const elements = document.querySelectorAll(selector);
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.4 });
+
+        elements.forEach(el => observer.observe(el));
+      };
+
+      animateOnScroll('.animacao-texto');
+    });
+  </script>
 </body>
+
 </html>
